@@ -1153,3 +1153,40 @@ footer .socials a.kaggle:hover {
     background-color: #1ca8e3; /* Darker Kaggle Blue */
 }
 
+
+
+/* Universal Responsive Media Query */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    h1, h2, h3 {
+        font-size: 22px; /* Scales down headings */
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    img {
+        width: 100%; /* Ensures images are responsive */
+        height: auto;
+    }
+
+    .card, .content, .grid {
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center;
+    }
+
+    p {
+        font-size: 14px; /* Adjusts text for better readability */
+        line-height: 1.5;
+    }
+
+    button, a {
+        font-size: 14px; /* Smaller buttons and links */
+    }
+}
+
