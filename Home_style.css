@@ -18,7 +18,6 @@
     background-color: #2980b9; /* Darker on hover */
 }
 
-
 /* Base styles */
 * {
     margin: 0;
@@ -229,8 +228,6 @@ h1.logo:hover {
         transform: translateY(0);
     }
 }
-
-
 
 /* Hero Section */
 .hero {
@@ -473,9 +470,6 @@ h1.logo:hover {
     }
 }
 
-
-
-
 .about-section {
     padding: 60px 0;
     background-color: #fdfeff;
@@ -498,8 +492,6 @@ h1.logo:hover {
     flex: 1;
     max-width: 600px;
 }
-
-
 
 .about-text h3 {
     /* text-align: left; */
@@ -529,8 +521,6 @@ h1.logo:hover {
     position: relative;
     overflow: hidden;
 }
-
-
 
 /* Hover Effect with Pulse Animation */
 .about-text a.btn:hover {
@@ -799,7 +789,6 @@ h1.logo:hover {
       background-position: 0% 50%;
     }
   }
-  
 
  /* Skills Section with Animated Background */
 #skills {
