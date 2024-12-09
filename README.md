@@ -4,6 +4,8 @@
 
 I'm a passionate Full-Stack Developer specializing in Django, backend development, and AI-driven applications. With hands-on experience in building dynamic web applications, I love creating impactful solutions that merge clean code with practical functionality. From developing scalable e-commerce platforms to AI-based systems, my work focuses on combining innovation with reliability. I’m constantly exploring new technologies to push the boundaries of what’s possible and contribute meaningfully to the tech community. Let's build something great together!<br><br>
 
+## Visit portfolio
+https://hariomkabra.github.io/HariomKabra/
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Hariom Kabra) 
