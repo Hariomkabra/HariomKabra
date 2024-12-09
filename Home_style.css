@@ -780,12 +780,38 @@ h1.logo:hover {
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
-    .cards {
-      flex-direction: column;
-      align-items: center;
-    }
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center-align the cards */
+    gap: 20px; /* Add space between cards */
+    padding: 10px; /* Add padding for proper spacing */
   }
+
+  .card {
+    width: 90%; /* Ensure cards take up most of the screen width */
+    max-width: 350px; /* Limit card width for better readability */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow adjustment */
+  }
+
+  .card img {
+    height: auto; /* Adjust the height to maintain aspect ratio */
+    border-bottom: 2px solid #ff9a9e; /* Keep border styling */
+  }
+}
+
+/* For even smaller screens (optional) */
+@media (max-width: 480px) {
+  .card {
+    width: 95%; /* Further increase card width on very small screens */
+    padding: 15px; /* Add internal padding for better appearance */
+  }
+
+  .card img {
+    height: 150px; /* Restrict height for very small screens */
+  }
+}
+
   
   /* Background Animation */
   @keyframes gradientAnimation {
