@@ -3,7 +3,7 @@ I'm a passionate Full-Stack Developer with a strong foundation in Django, backen
 
 💻 Over time, I’ve developed everything from e-commerce platforms to AI-powered systems, blending innovation with reliability. My work reflects a balance of creativity and logic, always aimed at solving real-world problems effectively.
 
-🚀Currently, I’m deepening my expertise in DevOps and mastering Amazon Web Services (AWS) to build highly robust, secure, and scalable systems. This evolving skill set empowers me to manage the entire application lifecycle — from development and integration to deployment, monitoring, and continuous improvement.
+🚀Currently, I’m deepening my expertise in DevOps and mastering Amazon Web Services (AWS) to build highly robust, secure, and scalable systems. This evolving skill set empowers me to manage the entire application lifecycle — from development and integration to deployment, monitoring, and continuous improvement.<br>
 🌱 I believe in lifelong learning and continuously explore new technologies to push boundaries, improve workflows, and contribute meaningfully to the tech community.<br>
 
 
