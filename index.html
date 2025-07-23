@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hariom S. Kabra </title>
-    <link rel="stylesheet" href="Home_style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="Home_Style.css"> <!-- Link to your CSS file -->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Anime.js for title wave animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+ 
 </head>
 <body>
 
@@ -14,7 +29,7 @@
     <header>
         <div class="header_container">
             <h1 class="logo">
-                <span class="typing-animation">Welcome to My Portfolio</span>
+                <span class="typing-animation">AWS & DevOps Portfolio</span>
             </h1>
             <nav>
                 <ul class="nav-links">
@@ -32,146 +47,278 @@
             </nav>
         </div>
     </header>
-    
+    <script>
+        // GSAP Animations
+        gsap.from(".logo", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
+        gsap.from(".nav-links li", { duration: 0.8, x: 20, opacity: 0, stagger: 0.2, delay: 0.5 });
 
-    <!-- Hero Section -->
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            gsap.to(".bar", {
+                duration: 0.3,
+                rotate: navLinks.classList.contains('active') ? 45 : 0,
+                y: navLinks.classList.contains('active') ? (index => index === 1 ? -8 : index === 2 ? 8 : 0) : 0,
+                stagger: 0.1
+            });
+        });
+
+        // Intersection Observer for Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gsap.to(entry.target, { duration: 0.8, y: 0, opacity: 1, ease: "power2.out" });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            gsap.set(section, { y: 50, opacity: 0 });
+            observer.observe(section);
+        });
+    </script>
+
   <!-- Hero Section -->
+
+<!-- Hero Section -->
 <section id="home" class="hero">
-    <div class="container">
+    <div id="particles-js"></div> <!-- Background animation -->
+    <div class="container hero-content">
         <h1 class="hero-title">Hariom Suraj Kabra</h1>
-        <p class="hero-subtitle">Full Stack Developer</p>
-        <a href="assets/HariomKabra.pdf" class="btn">Download Résumé</a>
+        <p class="hero-subtitle">AWS + DevOps Engineer</p>
+        <h1 class="hero-description">
+      Passionate about building scalable infrastructure and automating workflows in the cloud.
+      Experienced with AWS, Terraform, Docker, and CI/CD pipelines.
+    </h1><br>
+        <a href="assets/Hariom_CLoud_01.pdf" class="btn">Download Résumé</a>
     </div>
 </section>
 
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle"
+            },
+            "opacity": {
+                "value": 0.5
+            },
+            "size": {
+                "value": 3
+            },
+            "move": {
+                "enable": true,
+                "speed": 2
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                }
+            }
+        }
+    });
+</script>
+
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content" style="display: flex; justify-content: center; text-align: center;">
-                <div class="about-text" style="max-width: 800px; width: 100%;">
-                    <h2 class="skills-heading">About Me</h2>
+   
+    <!-- About Me Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-text">I’m Hariom Kabra, a passionate <strong>AWS + DevOps Engineer</strong> with hands-on experience in cloud infrastructure, automation, and CI/CD pipelines. I enjoy building scalable systems and optimizing deployment workflows.</p>
 
-                    
-                     <!-- Curved background for the text --> 
+    <div class="tech-services">
+      <div class="service-card">AWS Services (EC2, S3, RDS)</div>
+      <div class="service-card">Terraform & IaC</div>
+      <div class="service-card">CI/CD with GitHub Actions</div>
+      <div class="service-card">Docker & Kubernetes</div>
+      <div class="service-card">Monitoring: Prometheus, Grafana</div>
+    </div>
+  </div>
+</section>
 
-                     <h3 class="wave-heading">
-                        <span>AI</span> <span>Excellence</span> <span>with</span> <span>Purpose</span>
-                        <span>and</span> <span>Precision</span>
-                      </h3>
-                      
+<!-- Experience Section -->
+<section id="experience" class="experience-section">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="experience-timeline">
+      <div class="timeline-item">
+        <h3 class="company">Meghplat Analytics</h3>
+        <p class="role">Web Development Intern (March 2024 – July 2024)</p>
+        <p>
+          During my internship at Meghplat Analytics, I worked as a Full Stack Developer and contributed to several real-time projects. This experience not only enhanced my technical skills but also exposed me to team collaboration, agile development, and real-world problem-solving.
+        </p><br>
+        <ul>
+          <li>Built and styled responsive pages with HTML, CSS, JS, Tailwind</li>
+          <li>Worked on alignment issues, UI fixes, and bug resolutions</li>
+          <li>Participated in meetings and maintained clean Git workflows</li>
+        </ul>
+        <p><strong>Skills:</strong> Web Dev, Git, GitHub, Deployment, Debugging</p>
+        <a href="assets/Hariom_Intership_Certificate_Meghplat_Analytics.pdf" class="btn view-cert" target="_blank">View Certificate</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    
-                    <p>I’m Hariom Suraj Kabra, a full-stack developer with a strong focus on backend development, particularly using Django, along with expertise in frontend technologies and database management. My journey in full-stack development has allowed me to create dynamic and scalable web applications that cater to real-world business needs.</p>
-    
-                    <p> I’ve worked on a range of projects that highlight my full-stack skills, including Resumecraft, a Django-based platform that allows users to generate personalized resumes. I built both the front-end and back-end, integrating Python, HTML, CSS, and JavaScript to ensure a seamless user experience. Additionally, I developed ApnaShop, an e-commerce platform where I designed both the user interface and the backend infrastructure, using Django for server-side development and integrating payment gateways for a complete shopping experience.</p>
-    
-                    <p> In these projects, I implemented robust database management systems, RESTful APIs using Django REST Framework (DRF), and ensured scalability and security across both the frontend and backend layers. I have hands-on experience working with relational databases like MySQL and PostgreSQL, and I’m proficient in creating API endpoints, handling data validation, and optimizing performance.</p>
-    
-                    <p>I am also comfortable with front-end technologies like React and which I’ve used to create responsive and user-friendly interfaces, complementing my backend work. Whether it’s developing dynamic web applications or ensuring that the back-end is optimized for speed and security, I’m passionate about building reliable, efficient systems.</p>
 
-                    <p>
-                        With a deep understanding of both front-end and back-end development, I’m excited to continue developing scalable solutions that address complex challenges and improve user experiences
-                    </p>
-    
-                    <a href="#contact" class="btn">Get in touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
+<!-- Add these at the bottom of your HTML -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+  // Reveal Animation
+  ScrollReveal().reveal('.section-title', {
+    duration: 1200,
+    origin: 'bottom',
+    distance: '50px',
+    easing: 'ease-in-out',
+    reset: true
+  });
+
+  ScrollReveal().reveal('.service-card, .timeline-item', {
+    interval: 100,
+    delay: 200,
+    origin: 'bottom',
+    distance: '20px',
+    reset: false
+  });
+
+  // GSAP example (you can extend this)
+  gsap.from(".about-text", { opacity: 0, y: 50, duration: 1.2 });
+</script>
+
+<!-- End of Scripts -->
+
+<!-- End about section  -->
+
+
     <!-- Cards Section -->
 
 
-    <div id="particles-js"></div>
     <section id="cards-section" class="cards-section">
-        <div class="container">
-            <h2 class="skills-heading">Honors & Digital Presence</h2>
+  <div class="container">
+    <h2 class="skills-heading gradient-text">Honors & Digital Presence</h2>
 
-            <h3 class="wave-heading">
-                <span>Where</span> <span>achievements</span> <span>unite</span> <span>with</span>
-                <span>shared</span> <span>visions</span> <span>and</span> <span>contribution</span>
-              </h3>
-              
-           
-  
-            <div class="cards" style="display: flex; justify-content: center; gap: 20px;">
-                
-                <!-- Project Card -->
-                <a href="Project.html" class="card-link" style="margin-left: 135px;"> <!-- Adjust margin-left as needed -->
-                    <div class="card">
-                        <img src="assets/project.jpg" alt="Projects">
-                        <div class="card-content">
-                            <h4>Projects &rarr;</h4>
-                            <p>Coding Dreams into Digital Reality</p>
-                        </div>
-                    </div>
-                </a>
+     <!-- Curved background for the text --> 
 
-                <!-- GitHub Card -->
-                <a href="Profile_Links.html" class="card-link">
-                    <div class="card">
-                        <img src="assets/gitka1.jpg" alt="GitHub and Profile Links">
-                        <div class="card-content">
-                            <h4>GitHub and Kaggle Profile Links &rarr;</h4>
-                            <p>Explore My Coding World and Data Insights!</p>
-                        </div>
-                    </div>
-                </a>
+                     <h2 class="wave-heading">
+                        <span>AWS + DEVOPS</span> <span>Excellence</span> <span>with</span> <span>Purpose</span>
+                        <span>and</span> <span>Precision</span>
+                      </h2> <br>
+                      
 
-                <!-- Achievements Card -->
-                <!--
-                <a href="Achivements&Certifications.html" class="card-link">
-                    <div class="card">
-                        <img src="assets/Achievements1.png" alt="Achievements and Certifications">
-                        <div class="card-content">
-                            <h4>Achievements and Certifications &rarr;</h4>
-                            <p>A Diary of Growth and Exploration.</p>
-                        </div>
-                    </div>
-                </a>
-                -->
-            </div>
+    <div class="cards-grid">
+      <!-- Project Card -->
+      <a href="Project.html" class="card-link" data-aos="zoom-in-up">
+        <div class="card" data-tooltip="Click to view Projects">
+          <img src="assets/project.jpg" alt="Projects">
+          <div class="card-content">
+            <h4>Projects →</h4>
+            <p>Coding Dreams into Digital Reality</p>
+          </div>
         </div>
-    </section>
+      </a>
+
+      <!-- GitHub & Kaggle Card -->
+      <a href="Profile_Links.html" class="card-link" data-aos="zoom-in-up" data-aos-delay="100">
+        <div class="card" data-tooltip="See my profiles">
+          <img src="assets/gitka1.jpg" alt="GitHub and Profile Links">
+          <div class="card-content">
+            <h4>GitHub & Kaggle →</h4>
+            <p>Explore My Coding World and Data Insights!</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
+    
 
     
 
     <!-- Skills section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="skills-heading">Skills</h2>
-            <div class="skills-grid">
+  <section id="skills" class="skills-section-glass">
+  <div class="skills-container">
+    <h2 class="skills-heading-glass">⚡ Tech Stack & Tools</h2>
+    <div class="skills-grid">
                 <div class="skill-item">
-                    <img src="https://dhinatechnologies.com/wp-content/uploads/2024/08/Front-End-UI-Technologies-scaled.webp" alt="HTML">
-                    <p>Frontend</p>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    <p>HTML</p>
                 </div>
-              
+
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                    <p>CSS</p>
+                </div>
+
+                <div class="skill-item">
+                    <img src="https://scand.com/wp-content/uploads/2021/04/JavaScript.jpg" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+
                 <div class="skill-item">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                     <p>Python</p>
                 </div>
-           
 
-               
+
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <p>MySQL</p>
+                </div>
+
+                <div class="skill-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s" alt="MySQL">
+                    <p>Mongo DB</p>
+                </div>
                
                 <div class="skill-item">
-                    <img src="https://miro.medium.com/v2/resize:fit:1200/1*HVKOLLX7wprRbHTl2IPDcQ.png" alt="Django">
+                    <img src="https://pbs.twimg.com/profile_images/1751000585631924224/E0dgjpQV_400x400.jpg" alt="Django">
                     <p>Django</p>
                 </div>
-            
-              
-
+               
+                
+                <div class="skill-item">
+                    <img src="https://bestarion.com/wp-content/uploads/2022/06/cicd-1024x539.png" alt="CI/CD">
+                    <p>CI/CD</p>
+                </div>
 
                 <div class="skill-item">
                     <img src="https://images-cdn.openxcell.com/wp-content/uploads/2024/07/25085005/reactjs-inner.svg" alt="React">
                     <p>React</p>
                 </div>
                 
-                <div class="skill-item">
-                    <img src="https://epss.ucla.edu/static/bootstrap-5.2.0/site/static/docs/5.2/assets/brand/bootstrap-social-logo.png" alt="Bootstrap">
-                    <p>Bootstrap</p>
-                </div>
+              
 
                 <div class="skill-item">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSDKn3vA2YUbXzN0ZC3gALWJ08gJN-Drl15w&s" alt="Tailwind">
@@ -191,26 +338,11 @@
                     <p >API </p>
                 </div>
 
+
                 <div class="skill-item">
                     <img src="https://www.seoclerk.com/pics/002/770/998/78c0ee929028881adf271b2b29bf12b2.png" alt="Ms Office">
                     <p>Ms Office</p>
                 </div>
-              
-                  <div class="skill-item">
-                    <img src="https://assets.aboutamazon.com/dims4/default/dd7f211/2147483647/strip/false/crop/960x720+0+0/resize/960x720!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F66%2Ff3%2Fcb7e8e804a1f991c96593cf465e1%2Faws-logo-white-on-si.jpg" alt="Django">
-                    <p> AWS</p>
-                </div>
-
-                <div class="skill-item">
-                    <img src="https://miro.medium.com/v2/resize:fit:800/0*_E9WWU9orPbAK9Mz.png" alt="Django">
-                    <p>Aamazon cloud watch</p>
-                </div>
-
-                  <div class="skill-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/PowerShell_Core_6.0_icon.png" alt="Ms Office">
-                    <p>Power Shell</p>
-                </div>
-                
             </div>
         </div>
     </section>
@@ -240,7 +372,7 @@
             </ul>
         </div>
     </footer>
-    
+         
 
     <!-- Link to external JavaScript file -->
 
@@ -250,11 +382,10 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
-    
-
-
+         
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script src="header_toggle.js"></script>
 </body>
 </html>
+
