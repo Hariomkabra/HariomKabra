@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* Custom scrollbar styles for Chrome, Safari, and Edge */
 ::-webkit-scrollbar {
     width: 12px;              /* Width of the scrollbar */
@@ -911,7 +911,6 @@ footer .socials a.kaggle:hover {
         font-size: 14px; /* Smaller buttons and links */
     }
 }
-=======
 /* Custom scrollbar styles for Chrome, Safari, and Edge */
 ::-webkit-scrollbar {
     width: 12px;              /* Width of the scrollbar */
@@ -1824,4 +1823,4 @@ footer .socials a.kaggle:hover {
         font-size: 14px; /* Smaller buttons and links */
     }
 }
->>>>>>> 22e74cacc5d03e56619b10547d1c7af770ca09d2
+
