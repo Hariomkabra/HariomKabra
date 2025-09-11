@@ -178,6 +178,7 @@ body {
             to { opacity: 1; transform: translateY(0); }
         }
         /*END NAVIGATION STYLES */
+        
 .hero {
     position: relative;
     width: 100%;
@@ -604,7 +605,7 @@ body {
     background: linear-gradient(120deg, #f4f4f9, #e0f7fa, #fbe9e7, #ede7f6);
     background-size: 400% 400%; /* Expand background for smooth animation */
     animation: contactBgAnimation 10s ease infinite; /* Infinite animation */
-    padding: 40px 0;
+    padding: 20px 0;
     text-align: center;
     position: relative; /* Needed for adding effects or overlays */
 }
@@ -881,7 +882,7 @@ footer .socials a.kaggle:hover {
 /* Universal Responsive Media Query */
 @media (max-width: 768px) {
     body {
-        font-size: 16px;
+        font-size: 14px;
         padding: 10px;
     }
 
@@ -1705,10 +1706,10 @@ footer .socials li {
 }
 
 footer .socials a {
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     color: #fff;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 8px;
 
    
@@ -1825,3 +1826,23 @@ footer .socials a.kaggle:hover {
     }
 }
 
+
+
+/* Default styles for all screens */
+
+/* Mobile devices (up to 600px wide) */
+@media (max-width: 600px) {
+  body { font-size: 14px; }
+  .container { padding: 10px; }
+  /* Hide or adjust elements that don't fit, e.g., .sidebar { display: none; } */
+}
+
+/* Tablets (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container { width: 90%; }
+}
+
+/* Desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .container { width: 80%; }
+}
